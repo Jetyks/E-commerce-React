@@ -1,0 +1,23 @@
+:root {
+    --clr-lotion: #6281bd;
+    --clr-orange: #ff7e35;
+    --clr-dark-orange: #ee6417;
+    --clr-yellow: #ffd618;
+    --clr-red: #c61a1a;
+    --clr-white: #6281bd;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: var(--clr-lotion, #fafafa);
+    font-family: "Red Hat Mono", monospace;
+    color: var(--clr-black);
+    
+}
