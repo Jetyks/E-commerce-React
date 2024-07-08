@@ -1,10 +1,10 @@
 :root {
-    --clr-lotion: #6281bd;
+    --clr-white: #ebebeb;;
     --clr-orange: #ff7e35;
     --clr-dark-orange: #ee6417;
     --clr-yellow: #ffd618;
     --clr-red: #c61a1a;
-    --clr-white: #6281bd;
+    
 }
 
 *,
@@ -16,8 +16,11 @@
 }
 
 html {
-    background-color: var(--clr-lotion, #fafafa);
-    font-family: "Red Hat Mono", monospace;
+    background-color: var(--clr-white, #fafafa);
+    font-family: 'Urbanist', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
     color: var(--clr-black);
     
 }

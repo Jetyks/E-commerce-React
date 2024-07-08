@@ -1,0 +1,29 @@
+.card-div{
+    background-color: #fff;
+    
+    border-radius: 10px;
+    height: 16rem;
+    width: 11rem;
+}
+
+.div-product-img{
+    height: 70%;
+}
+
+.name-container-card{
+    background-color: blue;
+    height: 10%;
+    
+}
+
+.name-container-card h2{
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-style: italic;
+}
+.price-container-card{
+    background-color: red;
+    height: 10%;
+    font-size: 0.9rem;
+    
+}

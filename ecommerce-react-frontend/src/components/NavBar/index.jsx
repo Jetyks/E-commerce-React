@@ -15,9 +15,9 @@ const NavBar = () => {
               <input type="text" />
             </div>
             <ul className='nav-items'>
-                <Link to="/" className='nav-link'>
+                {/* <Link to="/" className='nav-link'>
                     Inicio
-                </Link>
+                </Link> */}
                 <Link to="/" className='nav-link'>
                     Log In
                 </Link>

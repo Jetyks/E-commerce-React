@@ -1,8 +1,11 @@
-import React from 'react'
 
-const ListCard = () => {
+import "./index.css";
+
+const ListCard = (props) => {
   return (
-    <div>ListCard trabajando</div>
+    <div className='list-card-container'>
+      {props.children}
+    </div>
   )
 }
 

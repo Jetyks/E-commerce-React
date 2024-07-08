@@ -1,8 +1,22 @@
-import React from 'react'
+import "./index.css";
+import Card from '../../components/Card'
+import ListCard from '../../components/List Card'
 
 const Home = () => {
   return (
-    <div>Home trabajando</div>
+
+    <div className='home-container'>
+        <ListCard>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+        </ListCard>
+      
+    </div>
+    
   )
 }
 
