@@ -1,29 +1,58 @@
 .card-div{
     background-color: #fff;
-    
-    border-radius: 10px;
-    height: 16rem;
-    width: 11rem;
+    padding: 10px 20px 10px 20px;
+    border-radius: 14px;
+    height: 16.3rem;
+    width: 14.5rem;
+    cursor: pointer;
+    transition: 0.21s;
 }
 
+.card-div:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 0.8rem var(--clr-purple);
+    border: 1.3px solid var(--clr-cyan);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
 .div-product-img{
-    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    border-radius: 14px;
+    /* background-color: blue; */
+    
+}
+
+.div-product-img img{
+    border-radius: 14px;
+    height: 100%;
+    /* width: 100%; */
+    object-fit: contain;
+    /* background-color: aqua; */
 }
 
 .name-container-card{
-    background-color: blue;
-    height: 10%;
-    
+    /* background-color: gray; */
+    height: 15%;
+    margin-bottom: 8px;
 }
 
 .name-container-card h2{
-    font-size: 1.2rem;
-    font-weight: 300;
+    margin-top: 8px;
+   
+    font-size: 1rem;
+    font-weight: 400;
     font-style: italic;
 }
 .price-container-card{
-    background-color: red;
-    height: 10%;
-    font-size: 0.9rem;
+    /* background-color: rgb(52, 169, 52); */
+    height: 12%;
+    font-size: 1rem;
     
 }

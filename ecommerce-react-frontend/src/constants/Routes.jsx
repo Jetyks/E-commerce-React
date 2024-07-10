@@ -1,10 +1,10 @@
-import  {useRoutes} from "react-router-dom";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 
 /* import About from '../pages/About' */
-/* import AddCharacter from '../pages/AddCharacter' */
-import Home from '../pages/Home'
+/* import AddProduct from '../pages/AddProduct'; */
+import Home from '../pages/Home';
 /* import NotFound from '../pages/NotFound' */
-import ProductDetails from '../pages/ProductDetails'
+import ProductDetails from '../pages/ProductDetails';
 
 const Routes = () => {
 
@@ -13,12 +13,13 @@ const Routes = () => {
             path:"/",
             element: <Home/>
         },
-        /* {
-            path:"new-character",
-            element: <AddCharacter/>
+       /*  {
+            path:"new-product",
+            element: <AddProduct/>
         }, */
         {
-            path:"product-details",
+            //agregar /:id a la ruta
+            path:"product-details/:id",
             element: <ProductDetails/>
         },
         /* {
@@ -33,4 +34,5 @@ const Routes = () => {
 
   return routes;
 }
+
 export default Routes

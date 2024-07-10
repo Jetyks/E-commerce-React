@@ -1,9 +1,7 @@
 :root {
     --clr-white: #ebebeb;;
-    --clr-orange: #ff7e35;
-    --clr-dark-orange: #ee6417;
-    --clr-yellow: #ffd618;
-    --clr-red: #c61a1a;
+    --clr-purple: rgb(106, 74, 220);
+    --clr-cyan: #4bd2e473;
     
 }
 
