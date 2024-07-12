@@ -1,10 +1,12 @@
-import "./caca.css";
-import React from 'react'
+import "./index.css";
 import logo from "../../assets/img/logo.png"
 /* import SearchBar from '../SearchBar' */
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuth";
 
 const NavBar = ({ handleParams }) => {
+
+  const { isLoggedIn, login, logout } = useAuthContext(); 
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -33,12 +35,29 @@ const NavBar = ({ handleParams }) => {
                 {/* <Link to="/" className='nav-link'>
                     Inicio
                 </Link> */}
-                <Link to="/" className='nav-link'>
-                    Log In
-                </Link>
-                <Link to="/" className='nav-link'>
-                    Sign Up
-                </Link>
+
+                { ! isLoggedIn ? (
+                <>
+                  <Link to="/" className='nav-link'>
+                      Log In
+                  </Link>
+                  <Link to="/" className='nav-link'>
+                      Sign Up
+                  </Link>
+                </>
+                ) : (
+                <>
+                  <div>
+                    <h4>
+                      Bienvenido Enrique
+                    </h4>
+                  </div>
+                  <div>
+                    Carrito de compra
+                  </div>
+                </>
+                )
+                  }
                 {/* <Link to="/new-product" className='nav-link'>
                     Registro personaje
                 </Link> */}

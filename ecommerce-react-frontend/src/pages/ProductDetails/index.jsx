@@ -1,17 +1,16 @@
 import "./index.css"
-import React from 'react'
 import { useLocation } from 'react-router-dom';
 
 const ProductDetails = () => {
 
   const location = useLocation();
-  const { productName, productPrice, productImage, productDescription, gender } = location.state || {};
+  const { productName, productPrice, productImage, productDescription } = location.state || {};
 
   return (
    
         <div className="main-div-container-pd">
         
-          <div className="img-container-pd"> <img src={productImage} alt="Character image" /></div>
+          <div className="img-container-pd"> <img src={productImage} alt="Product image" /></div>
           <div className="info-product-pd">
             <div className="product-name-pd">
               <h1>{productName}</h1>
@@ -28,8 +27,7 @@ const ProductDetails = () => {
             
           </div>
           <div className="buy-container">
-              //disponible
-              //agregar al carrito
+            <button className="buy-button">Comprar</button>
           </div>
 
         </div>

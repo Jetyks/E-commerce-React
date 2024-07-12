@@ -1,8 +1,6 @@
 
-import NavBar from './components/NavBar'
-
 import Routes from "./constants/Routes"
-
+import NavBar from './components/NavBar'
 
 
 function App() {

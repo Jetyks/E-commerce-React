@@ -4,7 +4,7 @@ import "./index.css";
 const Card = ({productName, productPrice, productImage, productId, productDescription}) => {
  
   const routeMoreInfo = "product-details/" + productId;
-   console.log(routeMoreInfo);
+   /* console.log(routeMoreInfo); */
 
   return (
     <div className="card-div">
