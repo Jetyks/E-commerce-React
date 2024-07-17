@@ -1,0 +1,93 @@
+.main-container{
+    display: flex;
+    height: 30.5rem;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(120, 192, 168, 0.833); */
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid gray;
+    width: 28%;
+    height: 70%;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.title-form{
+    display: flex;
+    align-items: center;
+    /* background-color: gray; */
+    justify-content: center;
+    font-size: 1.3rem;
+    height: 20%;
+    font-weight: 200;
+}
+
+.title-form h2{
+    font-weight: 500;
+}
+
+.login-form{
+    height: 50%;
+   /*  background-color: green; */
+}
+
+.form-group{
+/*     background-color: darkgoldenrod; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 50%;
+
+}
+
+.form-group label{
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.blue{
+   /*  background-color:rgb(50, 112, 244) ; */
+}
+
+.form-group input{
+   height: 40%;
+   text-align: center;
+   border-radius: 8px;
+   border: 1.2px solid rgb(78, 75, 75);
+
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+    height: 55%;
+}
+
+.submit-button{
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: var(--clr-purple);
+}
+
+.submit-button:hover{
+    background-color: var(--clr-dark-purple);
+}
+
+.error-message{
+    color: var(--clr-purple);
+    font-weight: 400;
+    font-style: italic;
+}
