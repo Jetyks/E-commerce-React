@@ -14,6 +14,7 @@ const AuthProvider = ({ children }) => {
     const payload = jwtDecode(token);
     setIsLoggedIn(true);
     setUserPayload(payload);
+    
   };
 
   const logout = () => {
@@ -28,6 +29,7 @@ const AuthProvider = ({ children }) => {
       const payload = jwtDecode(token);
       setIsLoggedIn(true);
       setUserPayload(payload);
+      /* console.log(payload); */
     }
   },[]);
 

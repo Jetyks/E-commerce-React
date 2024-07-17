@@ -3,10 +3,30 @@ import logo from "../../assets/img/logo.png"
 /* import SearchBar from '../SearchBar' */
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuth";
+import { useState, useEffect } from "react";
+import { getMeUserService } from "../../services/getUser";
 
 const NavBar = ({ handleParams }) => {
 
-  const { isLoggedIn, login, logout } = useAuthContext(); 
+  const [userData, setUserData] = useState({});
+  const token = localStorage.getItem("token");
+
+  useEffect(()=>{
+    const fetchUserData = async () =>{
+      try{
+        const response = await getMeUserService(token)
+        if(response.status === 200){
+          setUserData(response.data)
+          console.log("Data del usuario", userData)
+        }
+      } catch (error){
+        console.error("este es el error",error)
+      }
+    }
+    fetchUserData()
+  }, [token]);
+
+  const { isLoggedIn, logout } = useAuthContext(); 
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -54,7 +74,7 @@ const NavBar = ({ handleParams }) => {
                 ) : (
                 <div className="logged-nav">
                   <div className="div-name-user">
-                    <h4>Bienvenido Enrique</h4>
+                    <h4>Bienvenido <label className="nav-user-name">{userData.first_name}</label></h4>
                     <div className="dropdown-menu">
                       <button onClick={logout}>Cerrar sesion</button>
                     </div>

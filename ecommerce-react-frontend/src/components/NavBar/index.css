@@ -92,7 +92,7 @@ li{
 .div-name-user h4{
     text-align: center;
     padding: 0 10px 0 10px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .dropdown-menu {
@@ -123,8 +123,15 @@ li{
     text-align: left;
     cursor: pointer;
     border-radius: 7px;
+    text-align: center;
   }
 
   .dropdown-menu button:hover {
     background-color: var(--clr-dark-purple);
+  }
+
+  .nav-user-name{
+    color: rgb(54, 198, 234);
+    font-style: italic;
+    text-shadow: 0.8px 0.8px 0.9px rgb(0, 0, 0);
   }
