@@ -26,7 +26,9 @@ const NavBar = ({ handleParams }) => {
       <nav>
         <form id='search-form' className='form-element' onSubmit={handleForm}>
             <div className= "logo-container">
+              <Link to="/">
                 <img src={logo} alt="logo ecommerce" className='logo-img' />
+              </Link>
             </div>
             <div className='input-container'>
               <input type="text" />
@@ -38,24 +40,29 @@ const NavBar = ({ handleParams }) => {
 
                 { ! isLoggedIn ? (
                 <>
-                  <Link to="/" className='nav-link'>
-                      Log In
-                  </Link>
-                  <Link to="/" className='nav-link'>
-                      Sign Up
-                  </Link>
+                  <li>
+                    <Link to="log-in" className='nav-link'>
+                        Log In
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="sign-up" className='nav-link'>
+                        Sign Up
+                    </Link>
+                  </li>
                 </>
                 ) : (
-                <>
-                  <div>
-                    <h4>
-                      Bienvenido Enrique
-                    </h4>
+                <div className="logged-nav">
+                  <div className="div-name-user">
+                    <h4>Bienvenido Enrique</h4>
+                    <div className="dropdown-menu">
+                      <button onClick={logout}>Cerrar sesion</button>
+                    </div>
                   </div>
-                  <div>
+                  <div className="div-shopping-car">
                     Carrito de compra
                   </div>
-                </>
+                </div>
                 )
                   }
                 {/* <Link to="/new-product" className='nav-link'>

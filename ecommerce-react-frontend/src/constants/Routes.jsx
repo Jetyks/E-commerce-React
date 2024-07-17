@@ -5,6 +5,8 @@ import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import Home from '../pages/Home';
 /* import NotFound from '../pages/NotFound' */
 import ProductDetails from '../pages/ProductDetails';
+import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
 
 const Routes = () => {
 
@@ -22,10 +24,14 @@ const Routes = () => {
             path:"product-details/:id",
             element: <ProductDetails/>
         },
-        /* {
-            path:"about",
-            element: <About/>
-        }, */
+        {
+            path:"log-in",
+            element: <Login/>
+        },
+        {
+            path:"sign-up",
+            element: <SignUp/>
+        },
         /* {
             path:"*",
             element: <NotFound/>
