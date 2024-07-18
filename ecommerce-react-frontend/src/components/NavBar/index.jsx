@@ -1,12 +1,18 @@
 import "./index.css";
 import logo from "../../assets/img/logo.png"
 /* import SearchBar from '../SearchBar' */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
 import { getMeUserService } from "../../services/getUser";
+import { useProductsContext } from "../../hooks/useProductsContext";
 
-const NavBar = ({ handleParams }) => {
+const NavBar = () => {
+
+  const navigate = useNavigate();
+
+  const { filterProducts, setFilteredProducts, products } = useProductsContext();
+  const [searchTerm, setSearchTerm] = useState('');
 
   const [userData, setUserData] = useState({});
   const token = localStorage.getItem("token");
@@ -17,7 +23,7 @@ const NavBar = ({ handleParams }) => {
         const response = await getMeUserService(token)
         if(response.status === 200){
           setUserData(response.data)
-          console.log("Data del usuario", userData)
+          /* console.log("Data del usuario", userData) */
         }
       } catch (error){
         console.error("este es el error",error)
@@ -28,36 +34,34 @@ const NavBar = ({ handleParams }) => {
 
   const { isLoggedIn, logout } = useAuthContext(); 
 
-  const handleForm = (event) => {
+  const handleSearch = (event) => {
     event.preventDefault();
-    
+    navigate("/");
+    filterProducts(searchTerm);
+  };
 
-    const formElement = event.target;
-    const formData = new FormData(formElement);
-
-    const productName = formData.get('product-name');
-
-        handleParams({ productName });
-
+  const handleLogoClick = () => {
+    navigate("/"); // Navegar al inicio
+    setFilteredProducts(products);
+    console.log(products) // Restablecer los productos filtrados
   };
 
   return (
     <>
       <nav>
-        <form id='search-form' className='form-element' onSubmit={handleForm}>
-            <div className= "logo-container">
-              <Link to="/">
-                <img src={logo} alt="logo ecommerce" className='logo-img' />
-              </Link>
+        <div className='general-div-container'>
+            <div className="logo-container" onClick={handleLogoClick}>
+              <img src={logo} alt="logo ecommerce" />
             </div>
-            <div className='input-container'>
-              <input type="text" />
-            </div>
+            <form id='search-form' 
+             className='form-element'
+             onSubmit={handleSearch}>
+                <div className='input-container'>
+                  <input type="text" placeholder='Buscar Producto...' 
+                  onChange={(e) => setSearchTerm(e.target.value)}/>
+                </div>
+            </form>
             <ul className='nav-items'>
-                {/* <Link to="/" className='nav-link'>
-                    Inicio
-                </Link> */}
-
                 { ! isLoggedIn ? (
                 <>
                   <li>
@@ -92,7 +96,7 @@ const NavBar = ({ handleParams }) => {
                     Acerca de nosotros
                 </Link> */}
             </ul>
-        </form>
+        </div>
       </nav>
     </>
   )
