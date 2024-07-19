@@ -42,7 +42,7 @@ const SignUp = () => {
                           placeholder='Pepe'
                           {...register("first_name", { required: true })}
                         />
-                        {errors.nombre && <span className="error-message-signup">Este campo es requerido</span>}
+                        {errors.first_name && <span className="error-message-signup">Este campo es requerido</span>}
                     </div>
                     <div className='form-group-signup c2'>
                         <label htmlFor='last_name'>Apellido</label>
@@ -54,7 +54,7 @@ const SignUp = () => {
                           placeholder='Martinez'
                           {...register("last_name", { required: true })}
                         />
-                        {errors.apellido && <span className="error-message-signup">Este campo es requerido</span>}
+                        {errors.last_name && <span className="error-message-signup">Este campo es requerido</span>}
                     </div>
                     <div className='form-group-signup c3'>
                         <label htmlFor='gender'>Genero</label>
@@ -68,7 +68,7 @@ const SignUp = () => {
                           <option value='M'>Masculino</option>
                           <option value='F'>Femenino</option>
                         </select>
-                        {errors.genero && <span className="error-message-signup">Este campo es requerido</span>}
+                        {errors.gender && <span className="error-message-signup">Este campo es requerido</span>}
                     </div>
                     <div className="form-group-signup c4">
                         <label htmlFor="email">Correo Electrónico</label>

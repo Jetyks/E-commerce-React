@@ -1,10 +1,17 @@
 import "./index.css"
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuthContext } from "../../hooks/useAuth"
 
 const ProductDetails = () => {
 
+  const {isLoggedIn} = useAuthContext();
   const location = useLocation();
   const { productName, productPrice, productImage, productDescription } = location.state || {};
+  
+  const navigate = useNavigate();
+  const handleButtonDisabled = () => {
+    navigate("/log-in");
+  };
 
   return (
    
@@ -26,9 +33,16 @@ const ProductDetails = () => {
             </div>
             
           </div>
-          <div className="buy-container">
-            <button className="buy-button">Comprar</button>
-          </div>
+          {isLoggedIn ?(
+            <div className="buy-container">
+              <button className="buy-button">Comprar</button>
+            </div>
+          ):(
+            <div className="buy-container">
+              <button className="buy-button-disabled" onClick={handleButtonDisabled}>Comprar</button>
+            </div>
+          )}
+          
 
         </div>
 

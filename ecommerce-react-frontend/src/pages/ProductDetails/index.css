@@ -80,17 +80,14 @@
 }
 
 .buy-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid gray;
     border-radius: 9px;
     width: 20%;
     margin-top: 20px;
-    /* background-color: forestgreen; */
-}
-
-.buy-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: aquamarine;
 }
 
 .buy-button{
@@ -105,4 +102,17 @@
 .buy-button:hover{
     background-color: var(--clr-dark-purple);
     
+}
+
+.buy-button-disabled{
+    width: 90%;
+    height: 10%;
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+.buy-button-disabled:hover{
+    background-color: rgb(84, 78, 78);
 }

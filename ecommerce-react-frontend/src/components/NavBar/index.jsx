@@ -17,13 +17,19 @@ const NavBar = () => {
   const [userData, setUserData] = useState({});
   const token = localStorage.getItem("token");
 
+  const { isLoggedIn, logout, userPayload } = useAuthContext();
+
   useEffect(()=>{
     const fetchUserData = async () =>{
       try{
         const response = await getMeUserService(token)
         if(response.status === 200){
           setUserData(response.data)
+          /* console.log(userPayload); */
           /* console.log("Data del usuario", userData) */
+        }
+        else {
+          isLoggedIn(false);
         }
       } catch (error){
         console.error("este es el error",error)
@@ -31,19 +37,20 @@ const NavBar = () => {
     }
     fetchUserData()
   }, [token]);
-
-  const { isLoggedIn, logout } = useAuthContext(); 
+ 
 
   const handleSearch = (event) => {
     event.preventDefault();
-    navigate("/");
-    filterProducts(searchTerm);
+    if(searchTerm){
+      navigate("/");
+      filterProducts(searchTerm);
+    }
+   
   };
 
   const handleLogoClick = () => {
-    navigate("/"); // Navegar al inicio
-    setFilteredProducts(products);
-    console.log(products) // Restablecer los productos filtrados
+    navigate("/"); 
+    setFilteredProducts(products); // Restablecer los productos filtrados
   };
 
   return (
@@ -65,17 +72,17 @@ const NavBar = () => {
                 { ! isLoggedIn ? (
                 <>
                   <li>
-                    <Link to="log-in" className='nav-link'>
+                    <Link to="/log-in" className='nav-link'>
                         Log In
                     </Link>
                   </li>
                   <li>
-                    <Link to="sign-up" className='nav-link'>
+                    <Link to="/sign-up" className='nav-link'>
                         Sign Up
                     </Link>
                   </li>
                 </>
-                ) : (
+                ) : ( 
                 <div className="logged-nav">
                   <div className="div-name-user">
                     <h4>Bienvenido <label className="nav-user-name">{userData.first_name}</label></h4>
@@ -83,18 +90,17 @@ const NavBar = () => {
                       <button onClick={logout}>Cerrar sesion</button>
                     </div>
                   </div>
+                  {userPayload?.role === "ADMIN" &&(
+                    <Link to="/add-products" className='link-add-product'>
+                      <h4>Agregar Producto</h4>
+                    </Link>
+                  )}   
                   <div className="div-shopping-car">
                     Carrito de compra
                   </div>
                 </div>
                 )
                   }
-                {/* <Link to="/new-product" className='nav-link'>
-                    Registro personaje
-                </Link> */}
-                {/* <Link to="/about" className='nav-link'>
-                    Acerca de nosotros
-                </Link> */}
             </ul>
         </div>
       </nav>
