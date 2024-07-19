@@ -4,6 +4,8 @@
     align-items: center;
     background-color: var(--clr-white);
     height: 30rem;
+    color: white;
+    
     
 }
 
@@ -13,30 +15,95 @@
     flex-direction: column;
     /* justify-content: space-between; */
     /* row-gap: 5%; */
-    background-color: rgb(13, 41, 179);
+    background-color: var(--clr-purple);
     border-radius: 12px;
-    padding: 20px;
-    width: 50%;
+    padding: 15px;
+    width: 55%;
     height: 95%;
     
 }
 
-.input-product-container{
+.add-product-form h2{
+   margin-bottom: 10px;
+}
+
+.input-product-container, .input-product-description{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10%;
     width: 80%;
     margin: 5px 0 5px 0;
-    background-color: rgba(8, 93, 163, 0.521);
+    background-color: var(--clr-dark-purple);
+    border-radius: 5px;
 }
-.input-product-container label{
-    margin-right: 80px;
+.input-product-container label, .input-product-description label{
+    font-size: 14px;
+    margin-right: 40px;
 }
 .input-data{
     height: 70%;
+    width: 60%;
+    text-align: center;
+}
+
+.input-description{
+    text-align: start;
+    height: 95%;
+    width: 65%;
+}
+
+.input-url-container label{
+    margin-right: 15px;
+}
+
+.input-url{
+    width: 68%;
 }
 
 textarea {
     resize: none;
   }
+
+.input-product-description{
+    height: 20%;
+    
+}
+
+.input-url{
+    width: 65%;
+}
+
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 40%;
+    margin-top: 8px;
+    border: none;
+    background-color: transparent;
+    transition: 0.20s;
+}
+
+.btn-container:hover{
+    box-shadow: 0 0 11px 1px rgb(216, 218, 151);
+}
+
+.btn-container button{
+    height: 100%;
+    width: 100%;
+    color: black;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(212, 215, 41);;
+}
+
+.add-product-form span{
+    margin-left: 20px;
+    font-size: 13px;
+    font-style: italic;
+}

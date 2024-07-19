@@ -25,16 +25,18 @@ const AddProducts = () => {
             <input 
               className='input-data'
               type="text" 
-              id="name" 
+              id="name"
+              placeholder='"Inteligent Desk Computer"' 
               {...register("name", { required: true })} 
             />
             {errors.name && <span>Este campo es obligatorio</span>}
           </div>
-          <div className="input-product-container">
+          <div className="input-product-description">
             <label htmlFor="description">Descripción:</label>
             <textarea 
-              className='input-data'
+              className='input-data input-description'
               id="description" 
+              placeholder='"The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"' 
               {...register("description", { required: true })} 
             />
             {errors.description && <span>Este campo es obligatorio</span>}
@@ -45,6 +47,7 @@ const AddProducts = () => {
               className='input-data'
               type="number" 
               id="price" 
+              placeholder='$999' 
               {...register("price", { required: true })} 
             />
             {errors.price && <span>Este campo es obligatorio</span>}
@@ -53,7 +56,7 @@ const AddProducts = () => {
             <label htmlFor="category">Categoría:</label>
             <select
               className='input-data' 
-              id="category" 
+              id="category"
               {...register("category", { required: true })} 
             >
               <option value="">Selecciona una categoría</option>
@@ -68,22 +71,27 @@ const AddProducts = () => {
             <input
               className='input-data' 
               type="text" 
-              id="brand" 
+              id="brand"
+              placeholder='"Thompson LLC"' 
               {...register("brand", { required: true })} 
             />
             {errors.brand && <span>Este campo es obligatorio</span>}
           </div>
-          <div className="input-product-container">
+          <div className="input-product-container input-url-container">
           <label htmlFor="image">URL de la Imagen</label>
           <input 
-            className='input-data'
+            className='input-data input-url'
             type="url" 
-            id="image" 
+            id="image"
+            placeholder='https://images-na.ssl-images-amazon.com...'  
             {...register("image", { required: true, pattern: /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i })} 
           />
           {errors.image && <span>Debe ser una URL válida</span>}
           </div>
-          <button type="submit">Agregar Producto</button>
+          <div className='btn-container'>
+            <button type="submit">Crear Producto</button>
+          </div>
+          
         </form>
       </div>
     );
