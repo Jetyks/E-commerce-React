@@ -6,6 +6,7 @@ import { useAuthContext } from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
 import { getMeUserService } from "../../services/getUser";
 import { useProductsContext } from "../../hooks/useProductsContext";
+import NavCategories from "../Nav Categories";
 
 const NavBar = () => {
 
@@ -104,6 +105,7 @@ const NavBar = () => {
             </ul>
         </div>
       </nav>
+      <NavCategories/>
     </>
   )
 }

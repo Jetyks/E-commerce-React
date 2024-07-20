@@ -1,6 +1,6 @@
 
 .general-div-container {
-    background-color: rgb(106, 74, 220);
+    background-color: var(--clr-purple);
     display: flex;
     height: 4.7rem;
     padding: 10px 24px 10px 24px;

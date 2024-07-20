@@ -18,6 +18,22 @@ const ProductsProvider = ({ children }) => {
     fetchProducts();
   }, []);
 
+  const filterCategoryProducts = (selectedCategory) => {
+    if (!selectedCategory) {
+      setFilteredProducts(products);
+    } else {
+      setFilteredProducts(
+        products.filter(product => {
+          // Verifica que product.product_name y searchTerm sean cadenas antes de usar toLowerCase()
+          if (typeof product.category === 'string' && typeof selectedCategory === 'string') {
+            return product.category.toLowerCase().includes(selectedCategory.toLowerCase());
+          }
+          return false;
+        })
+      );
+    }
+  };
+
   const filterProducts = (searchTerm) => {
     if (!searchTerm) {
       setFilteredProducts(products);
@@ -36,7 +52,7 @@ const ProductsProvider = ({ children }) => {
   
 
   return (
-    <ProductsContext.Provider value={{ products, filteredProducts, setFilteredProducts, filterProducts, loading }}>
+    <ProductsContext.Provider value={{ products, filteredProducts, setFilteredProducts, filterProducts, filterCategoryProducts, loading }}>
       {children}
     </ProductsContext.Provider>
   );
