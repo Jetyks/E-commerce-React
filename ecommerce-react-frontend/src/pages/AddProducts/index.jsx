@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import "./index.css";
+import { addProductService } from '../../services/addProduct';
 
 const AddProducts = () => {
 
@@ -12,9 +13,20 @@ const AddProducts = () => {
     "Sports", "Outdoors", "Automotive", "Industrial"
   ];
 
-  const onSubmit = (data) => {
-    console.log("data del producto",data);
-    // Aquí puedes manejar la lógica para enviar el formulario, por ejemplo, haciendo una solicitud a tu API
+  const onSubmit = async (productData) => {
+    try{
+      const token = localStorage.getItem("token");
+      const response = await addProductService(token, productData)
+      if(response.status === 200){
+        console.log("status de la respuesta",response.status);
+        console.log("respuesta.data",response.data);
+        console.log("este producto se ha creado",productData)
+      }
+    } catch (error){
+      console.log(productData);
+      console.error(error);
+      
+    }
   };
     return (
       <div className='div-form-container'>
@@ -25,9 +37,9 @@ const AddProducts = () => {
             <input 
               className='input-data'
               type="text" 
-              id="name"
+              id="product_name"
               placeholder='"Inteligent Desk Computer"' 
-              {...register("name", { required: true })} 
+              {...register("product_name", { required: true })} 
             />
             {errors.name && <span>Este campo es obligatorio</span>}
           </div>

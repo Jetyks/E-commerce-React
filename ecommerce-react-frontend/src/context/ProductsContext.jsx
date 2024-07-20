@@ -23,9 +23,13 @@ const ProductsProvider = ({ children }) => {
       setFilteredProducts(products);
     } else {
       setFilteredProducts(
-        products.filter(product => 
-          product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+        products.filter(product => {
+          // Verifica que product.product_name y searchTerm sean cadenas antes de usar toLowerCase()
+          if (typeof product.product_name === 'string' && typeof searchTerm === 'string') {
+            return product.product_name.toLowerCase().includes(searchTerm.toLowerCase());
+          }
+          return false;
+        })
       );
     }
   };
