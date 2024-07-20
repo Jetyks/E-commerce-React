@@ -1,0 +1,100 @@
+.modal-overlay {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.297);
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .3s;
+  }
+  
+  .modal-content {
+    position: relative;
+    margin: auto;
+    max-height: 80%;
+    border-radius: 12px;
+    height: 25%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--clr-dark-purple);
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+  }
+
+  .title-modal-container{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    font-size: 16px;
+    padding: 12px;
+    text-shadow: 2px 1.4px 7px rgb(35, 35, 35);
+  }
+  .container-buttons{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    /* background-color: rgba(156, 150, 150, 0.436); */
+    height: 50%;
+    width: 100%;
+  }
+
+.container-btn{
+    display: flex;
+   /*  justify-content: flex-start; */
+    align-items: center;
+    /* border: 2px solid gray; */
+    height: 100%;
+    width: 50%;
+    
+}
+  
+
+  .btn-modal{
+    height: 80%;
+    width: 50%;
+    color: black;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 2px 1.4px 7px rgb(35, 35, 35);
+}
+
+.container-go-home{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-go-home{
+    /* background-color: rgb(212, 215, 41); */
+    background-color: rgb(54, 198, 234);
+    box-shadow: 0 0 55px 0.2px rgb(24, 28, 38);
+    color: white;
+    margin-right: 20px;
+}
+
+.btn-go-home:hover{
+    background-color: rgb(43, 172, 204);
+}
+
+.btn-close-modal{
+    background-color: red;
+    box-shadow: 0 0 55px 0.2px rgb(24, 28, 38);
+    color: var(--clr-white);
+    margin-left: 20px;
+}
+
+.btn-close-modal:hover{
+    background-color: rgb(214, 7, 7);
+}

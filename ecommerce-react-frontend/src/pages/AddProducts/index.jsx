@@ -1,8 +1,12 @@
 import { useForm } from 'react-hook-form';
 import "./index.css";
 import { addProductService } from '../../services/addProduct';
+import SuccessModal from '../../components/Success Modal';
+import { useState } from 'react';
 
 const AddProducts = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -20,13 +24,18 @@ const AddProducts = () => {
       if(response.status === 200){
         console.log("status de la respuesta",response.status);
         console.log("respuesta.data",response.data);
-        console.log("este producto se ha creado",productData)
+        console.log("este producto se ha creado",productData);
+        setIsModalOpen(true);
       }
     } catch (error){
       console.log(productData);
       console.error(error);
       
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
     return (
       <div className='div-form-container'>
@@ -103,8 +112,8 @@ const AddProducts = () => {
           <div className='btn-container'>
             <button type="submit">Crear Producto</button>
           </div>
-          
         </form>
+        <SuccessModal isOpen={isModalOpen} onClose={closeModal} />
       </div>
     );
 }

@@ -13,8 +13,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* justify-content: space-between; */
-    /* row-gap: 5%; */
     background-color: var(--clr-purple);
     border-radius: 12px;
     padding: 15px;
