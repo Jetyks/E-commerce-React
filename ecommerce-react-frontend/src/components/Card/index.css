@@ -2,10 +2,11 @@
     background-color: #fff;
     padding: 10px 15px 10px 15px;
     border-radius: 14px;
-    height: 19.3rem;
+    height: 19.9rem;
     width: 14.5rem;
     cursor: pointer;
     transition: 0.30s;
+    margin-bottom: 8.5px;
 }
 
 .card-div:hover{
@@ -23,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70%;
+    height: 65%;
     border-radius: 14px;
     /* background-color: blue; */
     
@@ -38,16 +39,23 @@
     /* background-color: aqua; */
 }
 
+.product-brand-container{
+    padding-top: 3px;
+    /* background-color: bisque; */
+}
+
 .name-container-card{
+    display: flex;
+    align-items: center;
     /* background-color: gray; */
     min-height: 10%;
     max-height: 20%;
-    /* margin-bottom: 8px; */
 }
 
 .name-container-card h2{
     /* margin-top: 8px; */
-    font-size: 18.6px;
+    padding: 2px 0 7px 0;
+    font-size: 18px;
     font-weight: 400;
     font-style: italic;
 }
