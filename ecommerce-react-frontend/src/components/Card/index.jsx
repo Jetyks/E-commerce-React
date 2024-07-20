@@ -5,6 +5,7 @@ const Card = ({productName, productPrice, productImage, productId, productDescri
  
   const routeMoreInfo = "product-details/" + productId;
    /* console.log(routeMoreInfo); */
+  const placeHolderImage = "https://plus.unsplash.com/premium_photo-1681487929886-4c16ad2f2387?q=80&w=1922&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
   return (
     <div className="card-div">
@@ -14,7 +15,7 @@ const Card = ({productName, productPrice, productImage, productId, productDescri
        className="card-link" 
       >
         <div className="div-product-img">
-          <img src={productImage} alt="product-img" />
+          <img src={productImage || placeHolderImage} alt="product-img" />
         </div>
         <div className="name-container-card">
           <h2>{productName}</h2>
