@@ -1,6 +1,6 @@
 import "./index.css";
 import logo from "../../assets/img/logo.png"
-/* import SearchBar from '../SearchBar' */
+import shoppingCart from "../../assets/img/shopping-cart.png"
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuth";
 import { useState, useEffect } from "react";
@@ -96,7 +96,7 @@ const NavBar = () => {
                     </Link>
                   )}   
                   <div className="div-shopping-car">
-                    Carrito de compra
+                    <img src={shoppingCart} alt="shopping-cart-img" />
                   </div>
                 </div>
                 )

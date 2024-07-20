@@ -50,6 +50,8 @@
     width: 100%;
     text-align: center;
     font-size: 1.25rem;
+    border-radius: 10px;
+    border: none;
 }
 
 li{
@@ -161,9 +163,16 @@ li{
   .div-shopping-car{
     display: flex;
     align-items: center;
-    color: white;
-    background-color: red;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
     height: 80%;
     width: 15%;
+    cursor: pointer;
+
+}
+
+.div-shopping-car img{
+    height: 65%;
 
 }
